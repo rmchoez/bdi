@@ -43,6 +43,12 @@ export function BenefitsSection() {
         </div>
         <Button href="#about">See what makes us different</Button>
       </div>
+      <div className="plans-wave" aria-hidden="true">
+        <svg viewBox="0 0 1920 155" preserveAspectRatio="none">
+          <path className="plans-wave-light" d="M0 0 Q960 138 1920 0 L1920 155 L0 155 Z" />
+          <path className="plans-wave-main" d="M0 25 Q960 155 1920 25 L1920 155 L0 155 Z" />
+        </svg>
+      </div>
     </section>
   );
 }

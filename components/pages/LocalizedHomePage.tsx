@@ -8,6 +8,8 @@ import { Header } from "../sections/Header";
 import { HeroSlider } from "../sections/HeroSlider";
 import { PlansSection } from "../sections/PlansSection";
 import { QuickActionsSection } from "../sections/QuickActionsSection";
+import { TestimonialsSection } from "../sections/TestimonialsSection";
+import { TrustSection } from "../sections/TrustSection";
 import { Button } from "../ui/Button";
 import { Logo } from "../ui/Logo";
 
@@ -30,7 +32,9 @@ export function LocalizedHomePage({ locale }: { locale: Locale }) {
       <QuickActionsSection />
       <AudiencePlansSection locale={locale} />
       <BenefitsSection />
-      <PlansSection plans={plans} />
+      <PlansSection plans={plans} compareHref={getPlansPath(locale)} />
+      <TestimonialsSection locale={locale} />
+      <TrustSection />
 
       <section className="numbers section">
         <div className="container">

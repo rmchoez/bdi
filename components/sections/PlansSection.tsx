@@ -5,7 +5,7 @@ import { useState } from "react";
 import { PlanCard, type Plan } from "../ui/PlanCard";
 import { SectionHeading } from "../ui/SectionHeading";
 
-export function PlansSection({ plans }: { plans: Plan[] }) {
+export function PlansSection({ plans, compareHref }: { plans: Plan[]; compareHref: string }) {
   const [start, setStart] = useState(0);
   const visiblePlans = Array.from({ length: 3 }, (_, offset) => plans[(start + offset) % plans.length]);
 
@@ -27,6 +27,13 @@ export function PlansSection({ plans }: { plans: Plan[] }) {
           <button className="plan-arrow plan-arrow-right" onClick={() => setStart((current) => (current + 1) % plans.length)} aria-label="Next plans">
             <ChevronRight />
           </button>
+        </div>
+        <div className="plans-help">
+          <img src="/icon-help.png" alt="" />
+          <div>
+            <h3>Need help<br />deciding?</h3>
+            <a href={compareHref}>Compare all plans</a>
+          </div>
         </div>
       </div>
     </section>
